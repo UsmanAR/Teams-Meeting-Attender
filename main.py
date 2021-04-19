@@ -23,7 +23,7 @@ Positions={
         "ETI":16,
         "MGT":17,
         "WBP":18, 
-        "EDE":19
+        "EDP":19
     }
 def getTimeTable():
     schedule=[]
