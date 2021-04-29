@@ -102,18 +102,20 @@ def joinMeeting(schedule,today,timings):
     browser.switch_to.window(browser.window_handles[1])
     while 1:
         today=datetime.datetime.today()
-        if float(str(today.hour)+"."+str(today.minute))>=float(timings[1]):
+        if today.hour+today.minute/100>=float(timings[1]):
             timings=timings[2:]
             schedule.pop(1)
         else:
-         if float(str(today.hour)+"."+str(today.minute))>=float(timings[0]):
+         if today.hour+today.minute/100>=float(timings[0]):
             present_sub=schedule[1]
             subject=schedule[1]
             current_position=Positions[present_sub]
             schedule.pop(1)
             present_sub=(By.XPATH,"(//div[@class='stv-item-inner-container'])[position()="+str(current_position)+"]")
             WebDriverWait(browser, 300).until(EC.element_to_be_clickable(present_sub)).click()
+            time.sleep(5)
             try:
+            	time.sleep(2)
                 WebDriverWait(browser, 1800).until(EC.element_to_be_clickable(join_in)).click()
             except:
                 timings=timings[2:]
@@ -129,7 +131,7 @@ def joinMeeting(schedule,today,timings):
             timings.pop(0)
             while 1:
                 today=datetime.datetime.today() 
-                if float(str(today.hour)+"."+str(today.minute))>=float(timings[0]):
+                if today.hour+today.minute/100>=float(timings[0]):
                     try:
                         WebDriverWait(browser, 30).until(EC.element_to_be_clickable(hang_up)).click()
                         sendMessage(False,False,subject)
