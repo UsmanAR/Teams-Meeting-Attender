@@ -51,6 +51,7 @@ def getTimeTable():
 
 
 def sendMessage(status,cancel,sub):
+	t=datetime.datetime.today()
     if  cancel:
            message={
             "content":"Class  "+ str(sub)+ " has probably been cancelled  " 
@@ -58,11 +59,11 @@ def sendMessage(status,cancel,sub):
     else:
         if status:
             message={
-            "content":"I've joined "+ str(sub)+ " class at " +  str(datetime.datetime.now().hour)+":"+str(datetime.datetime.now().minute) + " :)"
+            "content":"I've joined "+ str(sub)+ " class at " +  str(t.hour)+":"+str(t.minute) + " :)"
             }
         else:
             message={
-            "content":"I've left " + str(sub)+ " class at " +  str(datetime.datetime.now().hour)+":"+str(datetime.datetime.now().minute) + " :)"
+            "content":"I've left " + str(sub)+ " class at " +  str(t.hour)+":"+str(t.minute) + " :)"
             }
     requests.post(webhook,data=message)
 
@@ -145,7 +146,7 @@ def joinMeeting(schedule,today,timings):
                     time.sleep(120)
          else:
             time.sleep(120)
-        if today.hour==17 or len(timings)==0:
+        if len(timings)==0:
             print("Meetings Unavailable/Over... \nBot is shutting down...")
             exit()
 

@@ -9,5 +9,5 @@ and assign it to the variable `webhook` in the script.
 ## TimeTable
 * The timetable provided should be in csv file format.
 * The time provided should be in 24 hour format.
-* The timetable template should be same as provided.
+* The timetable format should be same as provided.
 * Leave cells empty if any.
