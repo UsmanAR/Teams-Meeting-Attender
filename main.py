@@ -46,6 +46,8 @@ def getTimeTable():
     timings=timings[:-1]
     if today.strftime("%A")=="Sunday":
         print("ITS WEEKEND")
+    elif today.hour+today.minute/100>timings[-1]:
+    	print("Start me tommorrow...")
     else:
         joinMeeting(schedule,today,timings)
 
