@@ -80,7 +80,7 @@ def joinMeeting(schedule,today,timings):
             "profile.default_content_setting_values.media_stream_camera": 2,}
     options.add_experimental_option("prefs",prefs)
     browser=webdriver.Chrome(chrome_options=options,executable_path="chromedriver.exe")
-    browser.get("https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&rver=7.3.6963.0&wp=MBI_SSL&wreply=https%3a%2f%2fwww.microsoft.com%2fen-in%2fmicrosoft-teams%2flog-in&lc=16393&id=74335&aadredir=1")
+    browser.get("https://www.office.com/login?es=Click&ru=%2F")
     hang_up=(By.ID,"hangup-button")
     email_field= (By.ID, "i0116")
     password_field = (By.ID, "i0118")
