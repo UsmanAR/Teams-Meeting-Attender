@@ -1,5 +1,5 @@
 # Teams Bot
-A Bot that attends your teams meetings and notifies you when it joins/leaves.
+A Bot that attends your teams meetings and notifies you when it joins/leaves the meeting.
 ## Configuration
 * Insert your email id ,password in the variables `email_id,password` provided in the beginning of the script
 * Insert the subject names(as in the time table) in the `Positions` dictionary.The positions
